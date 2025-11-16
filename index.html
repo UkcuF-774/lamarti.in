@@ -1,269 +1,314 @@
-<!--
-Lamarti.in - Luxury Apparel Landing Page
-Single-file HTML/CSS/JS. Drop into your repo as `index.html`.
-Colors: Emerald (#046a4b), Gold (#d4af37), Black (#0b0b0b), Accent (#0f1720)
--->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lamarti — Luxury Apparel</title>
-  <meta name="description" content="Lamarti — Bold luxury apparel. Emerald, gold, and black. Shop premium designs." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Martí</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --emerald:#046a4b;
-      --gold:#d4af37;
-      --black:#0b0b0b;
-      --muted:#a8a8a8;
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px;
-      --maxw:1200px;
-      --ff-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; background: linear-gradient(180deg,var(--black),#050505); color:#fff; font-family:var(--ff-sans); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .container{max-width:var(--maxw); margin:0 auto; padding:48px 20px}
+    body {
+  background: #131212;
+  color: #111;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .logo{display:flex;gap:14px;align-items:center}
-    .brand-mark{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--emerald),#064e3b);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(4,106,75,0.12), inset 0 -6px 18px rgba(0,0,0,0.25)}
-    .brand-mark svg{filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6))}
-    .brand h1{margin:0;font-size:20px;letter-spacing:1px}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-
-    nav{display:flex;gap:18px;align-items:center}
-    a.btn{padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
-    .btn-ghost{color:var(--gold);border:1px solid rgba(212,175,55,0.12);background:transparent}
-    .btn-primary{background:linear-gradient(90deg,var(--gold),#f1c45a);color:#000}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 520px;gap:40px;align-items:center;padding:60px 0}
-    .hero-left h2{font-size:48px;margin:0 0 18px;line-height:1.02}
-    .lead{color:#cfcfcf;font-size:18px;margin-bottom:24px}
-    .cta-row{display:flex;gap:14px}
-
-    /* Card preview */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; padding:18px; box-shadow:0 10px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
-    .mock{border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#08120f,#0b1310);padding:18px}
-    .product-img{height:340px;background:linear-gradient(135deg,var(--emerald),#03372b);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.85);font-weight:700;font-size:22px}
-    .price{display:flex;align-items:center;gap:12px;margin-top:14px}
-    .price .gold{color:var(--gold);font-weight:800;font-size:20px}
-
-    /* Collections */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-    .product{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px;padding:16px;border:1px solid rgba(255,255,255,0.03)}
-    .product h3{margin:8px 0 4px}
-    .muted{color:var(--muted);font-size:14px}
-
-    /* Footer */
-    footer{border-top:1px solid rgba(255,255,255,0.03);margin-top:60px;padding-top:28px;display:flex;justify-content:space-between;align-items:center}
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr;}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .brand-mark{width:48px;height:48px}
-    }
-    @media (max-width:640px){
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      .grid{grid-template-columns:1fr}
-      .hero-left h2{font-size:34px}
-      .product-img{height:220px}
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #111;
+      letter-spacing: 2px;
     }
 
-    /* Small utilities */
-    .pill{background:var(--glass);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--gold);border:1px solid rgba(212,175,55,0.06)}
-    .tag{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:600}
-  </style>
+    nav {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 0 5%;
+}
+
+    nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #1a2d20;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  font-size: 1.25rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  text-shadow: 0 0 2px white, 0 0 4px white;
+}
+
+    nav a:hover {
+  background: #000;
+  border-radius: 6px;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
+  line-height: 1.25;
+  position: relative;
+  transform: none;
+}
+
+    .hero {
+  height: 100vh;
+  background: url('https://w0.peakpx.com/wallpaper/936/378/HD-wallpaper-gold-black-black-background.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: #111;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    .section {
+      padding: 5rem 5%;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .product {
+      background: #1a2d20;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      border: 2px solid #d4af37;
+      color: #fff;
+      position: relative;
+    }
+
+    .product:nth-child(3) {
+      grid-column: 1 / 3;
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .product::after {
+      content: attr(alt);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      animation: fadeInText 1.5s ease-in-out;
+      text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37;
+      pointer-events: none;
+    }
+
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .product-info {
+      display: none;
+    }
+
+    footer {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/056/396/220/large_2x/luxurious-and-sophisticated-green-and-white-marble-texture-with-gold-veins-and-splatters-creates-an-elegant-backdrop-free-photo.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 5%;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  text-shadow: 0 0 2px white, 0 0 4px white;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  background: #000;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
+  border-radius: 6px;
+}
+
+      .parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://w0.peakpx.com/wallpaper/936/378/HD-wallpaper-gold-black-black-background.jpg') no-repeat center center;
+  background-size: 150%;
+  z-index: -1;
+  transform: translate(0px, 0px);
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.featured-box {
+  display: inline-block;
+  background: #1a2d20;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 0 3px #fff, 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <div class="brand-mark" aria-hidden>
-          <!-- elegant L monogram -->
-          <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="12" fill="none"/>
-            <path d="M20 18h18a8 8 0 010 16H28v18" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.98"/>
-          </svg>
-        </div>
-        <div class="brand">
-          <h1>Lamarti</h1>
-          <p>Luxury Apparel — Emerald & Gold</p>
-        </div>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="parallax-bg"></div>
+    <div class="hero-content">
+      <h1>Le Martí</h1>
+      <p>Minimalism Meets Premium Fashion</p>
+      <button class="btn">Explore Collection</button>
+    </div>
+  </section>
+
+  <section class="section" id="shop">
+    <div style="display: flex; justify-content: center;"><h2 class="featured-box" style="color: #fff;">Featured Collection</h2></div>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1556909212-6e6eecf58c65?auto=format&fit=crop&w=500&q=80" alt="ATTIRE">
+        <div class="product-info"></div>
       </div>
-
-      <nav>
-        <a class="pill">New Arrival</a>
-        <a class="btn btn-ghost href="#collections">Collections</a>
-        <a class="btn btn-ghost href="#about">About</a>
-        <a class="btn btn-ghost" href="#shop">Shop</a>
-        <a class="btn btn-primary" href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-left">
-          <div class="tag">BOLD • LIMITED EDITION</div>
-          <h2>Handcrafted luxury with bold emerald and gold accents.</h2>
-          <p class="lead">Curated fabrics, precision tailoring. Own the look — sustainable, premium, unmistakable presence.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#shop">Shop Collections</a>
-            <a class="btn btn-ghost" href="#about">Our Story</a>
-          </div>
-
-          <div class="grid" style="margin-top:26px">
-            <div class="product card">
-              <div style="display:flex;gap:12px;align-items:center">
-                <div style="width:68px;height:68px;border-radius:10px;background:linear-gradient(180deg,var(--emerald),#08382b);display:flex;align-items:center;justify-content:center;font-weight:700">EM</div>
-                <div>
-                  <h3>Emerald Blazer</h3>
-                  <div class="muted">Tailored fit • Limited</div>
-                </div>
-                <div style="margin-left:auto;text-align:right" class="price"><div class="gold">₹17,999</div></div>
-              </div>
-            </div>
-            <div class="product card">
-              <div style="display:flex;gap:12px;align-items:center">
-                <div style="width:68px;height:68px;border-radius:10px;background:linear-gradient(180deg,var(--black),#1b1b1b);display:flex;align-items:center;justify-content:center;font-weight:700">GD</div>
-                <div>
-                  <h3>Golden Stitch Coat</h3>
-                  <div class="muted">Signature embroidery</div>
-                </div>
-                <div style="margin-left:auto;text-align:right" class="price"><div class="gold">₹24,499</div></div>
-              </div>
-            </div>
-            <div class="product card">
-              <div style="display:flex;gap:12px;align-items:center">
-                <div style="width:68px;height:68px;border-radius:10px;background:linear-gradient(180deg,#2a2a2a,#0f0f0f);display:flex;align-items:center;justify-content:center;font-weight:700">LX</div>
-                <div>
-                  <h3>Luxury Tee</h3>
-                  <div class="muted">Soft cotton blend</div>
-                </div>
-                <div style="margin-left:auto;text-align:right" class="price"><div class="gold">₹36,499</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <aside>
-          <div class="card">
-            <div class="mock">
-              <div class="product-img">EMERALD BLAZER — LIMITED</div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-                <div>
-                  <div style="font-weight:800">Emerald Blazer</div>
-                  <div class="muted">Tailored • 100% Wool</div>
-                </div>
-                <div class="price"><div style="text-decoration:line-through;color:rgba(255,255,255,0.35);">₹22,999</div><div class="gold">₹17,999</div></div>
-              </div>
-
-              <div style="display:flex;gap:10px;margin-top:18px">
-                <button class="btn btn-primary" style="flex:1">Buy Now</button>
-                <button class="btn btn-ghost" style="flex:1">View Details</button>
-              </div>
-            </div>
-
-          </div>
-        </aside>
-      </section>
-
-      <section id="collections" style="margin-top:40px">
-        <h3 style="margin:0 0 12px">Featured Collections</h3>
-        <p class="muted">Discover curated pieces crafted for presence.</p>
-
-        <div class="grid" style="margin-top:18px">
-          <div class="product card">
-            <img src="https://via.placeholder.com/600x400/044f3d/ffffff?text=Emerald+Collection" alt="Emerald" style="width:100%;border-radius:10px;object-fit:cover;height:160px">
-            <h3>Emerald Collection</h3>
-            <div class="muted">Statement blazers & coats</div>
-          </div>
-
-          <div class="product card">
-            <img src="https://via.placeholder.com/600x400/0b0b0b/ffffff?text=Gold+Thread" alt="Gold" style="width:100%;border-radius:10px;object-fit:cover;height:160px">
-            <h3>Golden Thread</h3>
-            <div class="muted">Fine embroidery & accents</div>
-          </div>
-
-          <div class="product card">
-            <img src="https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Essentials" alt="Essentials" style="width:100%;border-radius:10px;object-fit:cover;height:160px">
-            <h3>Essentials</h3>
-            <div class="muted">Premium basics</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" style="margin-top:44px">
-        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
-          <div style="flex:1;min-width:260px">
-            <h3>About Lamarti</h3>
-            <p class="muted">Lamarti crafts limited-run apparel that blends heritage tailoring with modern silhouettes. We select premium fabrics and apply precise techniques — every piece is a statement.</p>
-            <p class="muted" style="margin-top:12px">Sustainably sourced materials. Attention to detail. Tailored for confidence.</p>
-          </div>
-          <div style="width:320px;min-width:220px">
-            <div class="card">
-              <div style="padding:18px">
-                <div style="font-weight:800;margin-bottom:8px">Stay Updated</div>
-                <div class="muted">Join our mailing list for exclusive drops.</div>
-                <div style="display:flex;gap:8px;margin-top:12px">
-                  <input id="email" placeholder="you@domain.com" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
-                  <button class="btn btn-primary" id="join">Join</button>
-                </div>
-                <div id="msg" style="font-size:13px;color:var(--gold);margin-top:8px;display:none">Thanks — you're on the list.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="shop" style="margin-top:44px">
-        <h3>Top Picks</h3>
-        <div class="grid" style="margin-top:18px">
-          <!-- 6 product placeholders -->
-          <div class="product card"><img src="https://via.placeholder.com/600x600/044f3d/ffffff?text=Product" style="width:100%;height:220px;object-fit:cover;border-radius:10px"><h3>Emerald Blazer</h3><div class="muted">₹17,999</div></div>
-          <div class="product card"><img src="https://via.placeholder.com/600x600/0b0b0b/ffffff?text=Product" style="width:100%;height:220px;object-fit:cover;border-radius:10px"><h3>Golden Stitch Coat</h3><div class="muted">₹24,499</div></div>
-          <div class="product card"><img src="https://via.placeholder.com/600x600/1b1b1b/ffffff?text=Product" style="width:100%;height:220px;object-fit:cover;border-radius:10px"><h3>Luxury Tee</h3><div class="muted">₹3,499</div></div>
-          <div class="product card"><img src="https://via.placeholder.com/600x600/044f3d/ffffff?text=Product" style="width:100%;height:220px;object-fit:cover;border-radius:10px"><h3>Silk Scarf</h3><div class="muted">₹2,099</div></div>
-          <div class="product card"><img src="https://via.placeholder.com/600x600/0b0b0b/ffffff?text=Product" style="width:100%;height:220px;object-fit:cover;border-radius:10px"><h3>Leather Belt</h3><div class="muted">₹1,299</div></div>
-          <div class="product card"><img src="https://via.placeholder.com/600x600/1b1b1b/ffffff?text=Product" style="width:100%;height:220px;object-fit:cover;border-radius:10px"><h3>Evening Shirt</h3><div class="muted">₹4,799</div></div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>
-        <div style="font-weight:800">Lamarti</div>
-        <div class="muted">Crafted presence • © <span id="year"></span></div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1597589825556-f9b470f39a26?auto=format&fit=crop&w=500&q=80" alt="COLOGNE">
+        <div class="product-info"></div>
       </div>
-      <div style="display:flex;gap:14px;align-items:center">
-        <div class="muted">Privacy</div>
-        <div class="muted">Terms</div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1608229574707-bb0b4e7d432d?auto=format&fit=crop&w=500&q=80" alt="APPURTENANCES">
+        <div class="product-info"></div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-  </div>
+  <footer>
+    &copy; 2025 Le Martí. Designed for elegance.
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </footer>
 
-  <script>
-    // small interactivity
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('join').addEventListener('click', function(){
-      var email = document.getElementById('email').value || '';
-      var msg = document.getElementById('msg');
-      if(!email.includes('@')){ msg.style.display='block'; msg.textContent='Enter a valid email.'; msg.style.color='#ff7b7b'; return; }
-      msg.style.display='block'; msg.textContent='Thanks — you\'re on the list.'; msg.style.color='var(--gold)';
-    });
-
-    // simple focus outline for keyboard users
-    document.addEventListener('keydown', function(e){ if(e.key==='Tab') document.body.classList.add('show-focus'); });
-  </script>
+<script>
+  const parallaxBg = document.querySelector('.parallax-bg');
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX - window.innerWidth / 2) * -0.03;
+    const y = (e.clientY - window.innerHeight / 2) * -0.03;
+    parallaxBg.style.transform = `translate(${x}px, ${y}px)`;
+  });
+</script>
 </body>
 </html>
